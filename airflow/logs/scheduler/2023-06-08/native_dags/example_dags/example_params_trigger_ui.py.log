@@ -1,0 +1,60 @@
+[2023-06-08T18:29:44.228+0300] {processor.py:157} INFO - Started process (PID=15638) to work on /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:29:44.229+0300] {processor.py:826} INFO - Processing file /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2023-06-08T18:29:44.229+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:29:44.229+0300] {dagbag.py:541} INFO - Filling up the DagBag from /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:29:44.287+0300] {processor.py:836} INFO - DAG(s) dict_keys(['example_params_trigger_ui']) retrieved from /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:29:44.684+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:29:44.684+0300] {manager.py:504} INFO - Created Permission View: can delete on DAG:example_params_trigger_ui
+[2023-06-08T18:29:44.688+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:29:44.688+0300] {manager.py:504} INFO - Created Permission View: can edit on DAG:example_params_trigger_ui
+[2023-06-08T18:29:44.690+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:29:44.690+0300] {manager.py:504} INFO - Created Permission View: can read on DAG:example_params_trigger_ui
+[2023-06-08T18:29:44.690+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:29:44.690+0300] {dag.py:2726} INFO - Sync 1 DAGs
+[2023-06-08T18:29:44.696+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:29:44.696+0300] {dag.py:2747} INFO - Creating ORM DAG for example_params_trigger_ui
+[2023-06-08T18:29:44.700+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:29:44.700+0300] {dag.py:3486} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2023-06-08T18:29:44.709+0300] {processor.py:179} INFO - Processing /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.481 seconds
+[2023-06-08T18:31:14.977+0300] {processor.py:157} INFO - Started process (PID=15832) to work on /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:31:14.979+0300] {processor.py:826} INFO - Processing file /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2023-06-08T18:31:14.979+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:31:14.979+0300] {dagbag.py:541} INFO - Filling up the DagBag from /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:31:15.037+0300] {processor.py:836} INFO - DAG(s) dict_keys(['example_params_trigger_ui']) retrieved from /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:31:15.392+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:31:15.392+0300] {dag.py:2726} INFO - Sync 1 DAGs
+[2023-06-08T18:31:15.401+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:31:15.401+0300] {dag.py:3486} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2023-06-08T18:31:15.410+0300] {processor.py:179} INFO - Processing /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.434 seconds
+[2023-06-08T18:33:17.283+0300] {processor.py:157} INFO - Started process (PID=16000) to work on /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:33:17.285+0300] {processor.py:826} INFO - Processing file /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2023-06-08T18:33:17.285+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:33:17.285+0300] {dagbag.py:541} INFO - Filling up the DagBag from /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:33:17.345+0300] {processor.py:836} INFO - DAG(s) dict_keys(['example_params_trigger_ui']) retrieved from /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:33:17.705+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:33:17.705+0300] {dag.py:2726} INFO - Sync 1 DAGs
+[2023-06-08T18:33:17.714+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:33:17.714+0300] {dag.py:3486} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2023-06-08T18:33:17.723+0300] {processor.py:179} INFO - Processing /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.440 seconds
+[2023-06-08T18:35:24.348+0300] {processor.py:157} INFO - Started process (PID=16172) to work on /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:35:24.349+0300] {processor.py:826} INFO - Processing file /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2023-06-08T18:35:24.349+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:35:24.349+0300] {dagbag.py:541} INFO - Filling up the DagBag from /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:35:24.438+0300] {processor.py:836} INFO - DAG(s) dict_keys(['example_params_trigger_ui']) retrieved from /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:35:24.804+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:35:24.804+0300] {dag.py:2726} INFO - Sync 1 DAGs
+[2023-06-08T18:35:24.813+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:35:24.813+0300] {dag.py:3486} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2023-06-08T18:35:24.822+0300] {processor.py:179} INFO - Processing /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.475 seconds
+[2023-06-08T18:37:31.409+0300] {processor.py:157} INFO - Started process (PID=16372) to work on /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:37:31.411+0300] {processor.py:826} INFO - Processing file /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2023-06-08T18:37:31.411+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:37:31.411+0300] {dagbag.py:541} INFO - Filling up the DagBag from /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:37:31.486+0300] {processor.py:836} INFO - DAG(s) dict_keys(['example_params_trigger_ui']) retrieved from /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:37:31.906+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:37:31.906+0300] {dag.py:2726} INFO - Sync 1 DAGs
+[2023-06-08T18:37:31.919+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:37:31.918+0300] {dag.py:3486} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2023-06-08T18:37:31.932+0300] {processor.py:179} INFO - Processing /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.523 seconds
+[2023-06-08T18:39:40.539+0300] {processor.py:157} INFO - Started process (PID=16581) to work on /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:39:40.540+0300] {processor.py:826} INFO - Processing file /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2023-06-08T18:39:40.540+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:39:40.540+0300] {dagbag.py:541} INFO - Filling up the DagBag from /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:39:40.602+0300] {processor.py:836} INFO - DAG(s) dict_keys(['example_params_trigger_ui']) retrieved from /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:39:40.983+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:39:40.982+0300] {dag.py:2726} INFO - Sync 1 DAGs
+[2023-06-08T18:39:40.992+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:39:40.992+0300] {dag.py:3486} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2023-06-08T18:39:41.002+0300] {processor.py:179} INFO - Processing /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.463 seconds
+[2023-06-08T18:41:44.124+0300] {processor.py:157} INFO - Started process (PID=16755) to work on /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:41:44.126+0300] {processor.py:826} INFO - Processing file /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2023-06-08T18:41:44.126+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:41:44.126+0300] {dagbag.py:541} INFO - Filling up the DagBag from /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:41:44.190+0300] {processor.py:836} INFO - DAG(s) dict_keys(['example_params_trigger_ui']) retrieved from /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:41:44.562+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:41:44.562+0300] {dag.py:2726} INFO - Sync 1 DAGs
+[2023-06-08T18:41:44.571+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:41:44.571+0300] {dag.py:3486} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2023-06-08T18:41:44.581+0300] {processor.py:179} INFO - Processing /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.457 seconds
+[2023-06-08T18:43:49.872+0300] {processor.py:157} INFO - Started process (PID=16939) to work on /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:43:49.874+0300] {processor.py:826} INFO - Processing file /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2023-06-08T18:43:49.874+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:43:49.874+0300] {dagbag.py:541} INFO - Filling up the DagBag from /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:43:49.932+0300] {processor.py:836} INFO - DAG(s) dict_keys(['example_params_trigger_ui']) retrieved from /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2023-06-08T18:43:50.285+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:43:50.285+0300] {dag.py:2726} INFO - Sync 1 DAGs
+[2023-06-08T18:43:50.295+0300] {logging_mixin.py:149} INFO - [2023-06-08T18:43:50.294+0300] {dag.py:3486} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2023-06-08T18:43:50.304+0300] {processor.py:179} INFO - Processing /Users/dogukanulu/opt/anaconda3/lib/python3.9/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.432 seconds
