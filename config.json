@@ -1,0 +1,12 @@
+{
+    "url": "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest"
+    ,
+    "parameters": {
+        "symbol": "BTC,ETH",
+        "convert": "USD"
+    },
+    "headers": {
+        "Accepts": "application/json",
+        "X-CMC_PRO_API_KEY": "5620aaf5-fcb8-4295-8612-3a4528f938cc"
+    }
+}
