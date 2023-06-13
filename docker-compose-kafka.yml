@@ -123,6 +123,24 @@ services:
     networks:
       - kafka-network
       - airflow-kafka
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'mysql'
+      MYSQL_USER: 'mysql'
+      MYSQL_PASSWORD: 'mysql'
+      MYSQL_ROOT_PASSWORD: 'mysql'
+    ports:
+      - '3306:3306'
+    volumes:
+      - my-db:/var/lib/mysql
+    networks:
+      - airflow-kafka
+
+volumes:
+  my-db:
 
 networks:
   kafka-network:
