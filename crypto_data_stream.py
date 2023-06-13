@@ -9,6 +9,7 @@ logging.basicConfig(
     level=logging.INFO, format="%(asctime)s: %(funcName)s: %(levelname)s: %(message)s"
 )
 logger = logging.getLogger("crypto_api_streaming")
+api_key = os.environ.get("COINMARKETCAP_API_KEY")
 
 class DataConfig:
     """
@@ -56,32 +57,27 @@ class DataConfig:
         config = cls.load_config()
         return config.get("parameters", {})
 
-def data_stream(sleep_interval=1):
 
+def data_stream():
     try:
-        # Kafka runs on port 9092
-        producer = KafkaProducer(bootstrap_servers=['localhost:9092'])
+        # These are the Kafka brokers defined in docker-compose-kafka.yml
+        producer = KafkaProducer(bootstrap_servers=['kafka1:19092', 'kafka2:19093', 'kafka3:19094'])    
     except Exception as e:
-        logging.error(f'Cannot connect to Kafka producer due to: {e}')
-    
+        logger.error(f'Cannot connect to Kafka producer due to: {e}')
+    producer = KafkaProducer(bootstrap_servers=['kafka1:19092', 'kafka2:19093', 'kafka3:19094'])    
 
-    # Configure CoinMarketCap API endpoint and parameters
     url = DataConfig.get_url()
     parameters = DataConfig.get_parameters()
     headers = DataConfig.get_headers()
 
-    while True:
-        # Make API request for BTC and ETH prices
-        response = requests.get(url, headers=headers, params=parameters)
-        data = json.loads(response.text)
+    headers["X-CMC_PRO_API_KEY"] = api_key
 
-        # Process and send BTC data to Kafka (btc_prices topic)
-        process_and_send_data(producer, data, 'BTC', 'btc_prices')
+    response = requests.get(url, headers=headers, params=parameters)
+    data = json.loads(response.text)
 
-        # Process and send ETH data to Kafka (eth_prices topic)
-        process_and_send_data(producer, data, 'ETH', 'eth_prices')
+    process_and_send_data(producer, data, 'BTC', 'btc_prices')
+    process_and_send_data(producer, data, 'ETH', 'eth_prices')
 
-        time.sleep(sleep_interval)
 
 def process_and_send_data(producer, data, symbol, topic):
     price_data = data['data'][symbol]['quote']['USD']
@@ -96,4 +92,5 @@ def process_and_send_data(producer, data, symbol, topic):
     producer.send(topic, json.dumps(extracted_data).encode('utf-8'))
 
 if __name__ == "__main__":
-    data_stream(sleep_interval=1)
+    data_stream()
+

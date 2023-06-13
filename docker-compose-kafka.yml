@@ -11,6 +11,7 @@ services:
       ZOOKEEPER_SERVERS: zoo1:2888:3888
     networks:
       - kafka-network
+      - airflow-kafka
 
   kafka1:
     image: confluentinc/cp-kafka:7.3.2
@@ -28,6 +29,7 @@ services:
       KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: "true"
     networks:
       - kafka-network
+      - airflow-kafka
 
   kafka2:
     image: confluentinc/cp-kafka:7.3.2
@@ -45,6 +47,7 @@ services:
       KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: "true"
     networks:
       - kafka-network
+      - airflow-kafka
 
   kafka3:
     image: confluentinc/cp-kafka:7.3.2
@@ -62,6 +65,7 @@ services:
       KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: "true"
     networks:
       - kafka-network
+      - airflow-kafka
 
   kafka-connect:
     image: confluentinc/cp-kafka-connect:7.3.2
@@ -84,6 +88,7 @@ services:
       CONNECT_PLUGIN_PATH: '/usr/share/java,/usr/share/confluent-hub-components'
     networks:
       - kafka-network
+      - airflow-kafka
 
   schema-registry:
     image: confluentinc/cp-schema-registry:7.3.2
@@ -95,12 +100,13 @@ services:
       SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
     networks:
       - kafka-network
+      - airflow-kafka
 
   kafka-ui:
     container_name: kafka-ui
     image: provectuslabs/kafka-ui:latest
     ports:
-      - 8080:8080 # Changed to avoid port clash with akhq
+      - 8888:8080 # Changed to avoid port clash with akhq
     depends_on:
       - kafka1
       - kafka2
@@ -109,14 +115,17 @@ services:
       - kafka-connect
     environment:
       KAFKA_CLUSTERS_0_NAME: local
-      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka1:19092,kafka2:19093,kafka3:19094
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: PLAINTEXT://kafka1:19092,PLAINTEXT_HOST://kafka1:19092
       KAFKA_CLUSTERS_0_SCHEMAREGISTRY: http://schema-registry:8081
       KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME: connect
       KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS: http://kafka-connect:8083
       DYNAMIC_CONFIG_ENABLED: 'true'
     networks:
       - kafka-network
+      - airflow-kafka
 
 networks:
   kafka-network:
     driver: bridge
+  airflow-kafka:
+    external: true
