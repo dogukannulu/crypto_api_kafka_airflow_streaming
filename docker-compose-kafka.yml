@@ -129,10 +129,10 @@ services:
     container_name: mysql
     restart: always
     environment:
-      MYSQL_DATABASE: 'mysql'
-      MYSQL_USER: 'mysql'
-      MYSQL_PASSWORD: 'mysql'
-      MYSQL_ROOT_PASSWORD: 'mysql'
+      MYSQL_DATABASE: mysql
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+      MYSQL_ROOT_PASSWORD: mysql
     ports:
       - '3306:3306'
     volumes:
@@ -146,17 +146,34 @@ services:
     restart: always
     ports:
       - 3000:3000
+    volumes:
+      - ./metabase-data:/metabase-data
     environment:
       MB_DB_TYPE: mysql
       MB_DB_DBNAME: mysql
       MB_DB_PORT: 3306
       MB_DB_USER: mysql
-      MB_DB_PASS: mysql
+      MB_DB_PASS: "mysql"
       MB_DB_HOST: mysql
     depends_on:
       - db
     links:
       - db
+    networks:
+      - airflow-kafka
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: metabase_pma
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8185:80
     networks:
       - airflow-kafka
 
