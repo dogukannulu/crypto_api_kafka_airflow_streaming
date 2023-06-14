@@ -14,7 +14,7 @@ default_args = {
     'retry_delay': timedelta(seconds=5)
 }
 
-with DAG('crypto_data_stream', default_args=default_args, schedule_interval='*/5 * * * *', catchup=False) as dag:
+with DAG('crypto_data_stream', default_args=default_args, schedule_interval='*/10 * * * *', catchup=False) as dag:
 
 
     data_stream_task = PythonOperator(

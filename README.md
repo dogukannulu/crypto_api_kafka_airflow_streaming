@@ -1,7 +1,8 @@
 # Information
 
 This repo illustrates a streaming data pipeline.
-This repo gets BTC prices from Crypto API with an API key. Sends the price data to Kafka topics every 10 seconds using Airflow. Every message is read by Kafka consumer and written to MySQL table.
+
+Gets BTC prices from Crypto API with an API key. Sends the price data to Kafka topics every 10 seconds using Airflow. Every message is read by Kafka consumer and written to MySQL table.
 
 `crypto_data_stream_dag.py` -> The DAG script that writes the API data to a Kafka producer every 10 seconds. In parallel, the messages are consumed and written to MySQL table.
 

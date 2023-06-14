@@ -63,6 +63,8 @@ def insert_data_into_mysql():
             conn.commit()
         except Exception as e:
             logging.error(f"Error inserting data: {e}")
+    
+    logger.info("Data coming from Kafka topic inserted successfully to MySQL.")
 
 
 

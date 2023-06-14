@@ -42,6 +42,8 @@ def data_stream():
         process_and_send_data(producer, data, 'BTC', 'btc_prices')
 
         time.sleep(10)
+    
+    logger.info("API data sent to Kafka successfully")
 
 
 def process_and_send_data(producer, data, symbol, topic):
