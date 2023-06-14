@@ -1,6 +1,7 @@
 # Information
 
-This repo gets BTC prices from Crypto API with an API key. Sends the price data to Kafka topics every 10 seconds using Airflow. This illustrates a streaming pipeline overall.
+This repo illustrates a streaming data pipeline.
+This repo gets BTC prices from Crypto API with an API key. Sends the price data to Kafka topics every 10 seconds using Airflow. Every message is read by Kafka consumer and written to MySQL table.
 
 `crypto_data_stream_dag.py` -> The DAG script that writes the API data to a Kafka producer every 10 seconds. In parallel, the messages are consumed and written to MySQL table.
 
@@ -22,17 +23,17 @@ After cloning the repo, run the following command only once:
 docker build --rm --build-arg AIRFLOW_DEPS="datadog,dask" --build-arg PYTHON_DEPS="flask_oauthlib>=0.9" -t puckel/docker-airflow .
 ```
 
-Then change the docker-compose-LocalExecutor.yml file with the one in this repo and add requirements.txt file in the folder. This will bind the Airflow container with Kafka container and necessary modules will automatically be installed:
+Then change the docker-compose-LocalExecutor.yml file with the one in this repo and add `requirements.txt` file in the folder. This will bind the Airflow container with Kafka container and necessary modules will automatically be installed:
 
 ```bash
 docker-compose -f docker-compose-LocalExecutor.yml up -d
 ```
 
-Now you have a running Airflow container and you can access to that on `https://localhost:8080`
+Now you have a running Airflow container and you can access the UI at `https://localhost:8080`
 
 ## Apache Kafka
 
-`docker-compose-kafka.yml` will create a multinode Kafka cluster. We can define the replication factor as 3 since there are 3 nodes (kafka1, kafka2, kafka3). We can also see the Kafka UI on `localhost:8888`.
+`docker-compose-kafka.yml` will create a multinode Kafka cluster. We can define the replication factor as 3 since there are 3 nodes (kafka1, kafka2, kafka3). We can also see the Kafka UI on `localhost:8888`. It also creates the MySQL server and binds it to Kafka and Airflow.
 
 We should only run:
 
@@ -54,8 +55,7 @@ After these steps, we should move all .py scripts under dags folder in `docker-a
 <img width="866" alt="image" src="https://github.com/dogukannulu/crypto_api_kafka_airflow_streaming/assets/91257958/bcc0726a-3739-4e2a-a62f-ee1869ce545f">
 
 
-
-When we turn the OFF button into ON, we can see that the data will be sent to Kafka topics every 10 seconds.
+When we turn the OFF button to ON, we can see that the data will be sent to Kafka topics every 10 seconds. We can check from Kafka UI as well.
 
 ![image](https://github.com/dogukannulu/crypto_api_kafka_airflow_streaming/assets/91257958/fd8bbf33-fe9a-4d99-be79-b023500d4372)
 
