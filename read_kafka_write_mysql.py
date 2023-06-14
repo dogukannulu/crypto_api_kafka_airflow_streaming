@@ -52,11 +52,10 @@ def insert_data_into_mysql():
     """
     end_time = time.time() + 120 # the script will run for 2 minutes
     for msg in consumer: 
-        kafka_message = json.loads(msg.value.decode('utf-8'))
-
         if time.time() > end_time:
             break
 
+        kafka_message = json.loads(msg.value.decode('utf-8'))
         try:
             # Create an SQL INSERT statement
             insert_query = f"INSERT INTO btc_prices (timestamp, name, price, volume_24h, percent_change_24h) VALUES (%s, %s, %s, %s, %s)"

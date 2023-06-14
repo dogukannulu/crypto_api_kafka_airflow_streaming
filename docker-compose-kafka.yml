@@ -123,6 +123,7 @@ services:
     networks:
       - kafka-network
       - airflow-kafka
+
   db:
     image: mysql:8.0
     container_name: mysql
@@ -136,6 +137,26 @@ services:
       - '3306:3306'
     volumes:
       - my-db:/var/lib/mysql
+    networks:
+      - airflow-kafka
+
+  metabase-app:
+    image: metabase/metabase
+    container_name: metabase
+    restart: always
+    ports:
+      - 3000:3000
+    environment:
+      MB_DB_TYPE: mysql
+      MB_DB_DBNAME: mysql
+      MB_DB_PORT: 3306
+      MB_DB_USER: mysql
+      MB_DB_PASS: mysql
+      MB_DB_HOST: mysql
+    depends_on:
+      - db
+    links:
+      - db
     networks:
       - airflow-kafka
 
