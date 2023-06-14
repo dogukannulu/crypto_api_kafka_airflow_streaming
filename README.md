@@ -1,16 +1,12 @@
 # Information
 
-This repo gets BTC and ETH prices from Crypto API with an API key. Sends the price data to Kafka topics every 5 minutes using Airflow. This illustrates a streaming pipeline overall.
+This repo gets BTC prices from Crypto API with an API key. Sends the price data to Kafka topics every 10 seconds using Airflow. This illustrates a streaming pipeline overall.
 
-`crypto_data_stream_dag.py` -> The DAG script that writes the API data to a Kafka producer eery 5 minutes
+`crypto_data_stream_dag.py` -> The DAG script that writes the API data to a Kafka producer every 10 seconds. In parallel, the messages are consumed and written to MySQL table.
 
 `crypto_data_stream.py` -> The script that gets the data from API and sends it to Kafka topic
 
 `read_kafka_write_mysql.py` -> The script that reads the Kafka consumer data and writes it to MySQL tables.
-
-`read_kafka_write_mysql_dag.py` -> Runs read_kafka_write_mysql.py regularly.
-
-`config.json` -> The configuration file that keeps URL, parameters and headers necessary for obtaining data from the API
 
 
 ## Apache Airflow
@@ -46,25 +42,25 @@ docker-compose -f docker-compose-kafka.yml up -d
 
 ![image](https://github.com/dogukannulu/crypto_api_kafka_airflow_streaming/assets/91257958/0cd84ffa-8d20-4db8-8900-c5d3413e0403)
 
-After accessing to Kafka UI, we can create topics `btc_prices` and `eth_prices`. Then, we can see the messages coming to Kafka producer:
+After accessing to Kafka UI, we can create the topic `btc_prices`. Then, we can see the messages coming to Kafka producer:
 
 ![image](https://github.com/dogukannulu/crypto_api_kafka_airflow_streaming/assets/91257958/693e858e-6bca-4967-ac70-edb5304db723)
 
 
 ## Running DAGs
 
-After these steps, we should move all .py scripts and `config.json` under dags folder in `docker-airflow` repo. Then we can see that `crypto_data_stream` and `read_kafka_write_mysql` appear in DAGS page.
+After these steps, we should move all .py scripts under dags folder in `docker-airflow` repo. Then we can see that `crypto_data_stream` appears in DAGS page.
 
 <img width="866" alt="image" src="https://github.com/dogukannulu/crypto_api_kafka_airflow_streaming/assets/91257958/bcc0726a-3739-4e2a-a62f-ee1869ce545f">
 
 
 
-When we turn the OFF button into ON, we can see that the data will be sent to Kafka topics every 5 minutes.
+When we turn the OFF button into ON, we can see that the data will be sent to Kafka topics every 10 seconds.
 
 ![image](https://github.com/dogukannulu/crypto_api_kafka_airflow_streaming/assets/91257958/fd8bbf33-fe9a-4d99-be79-b023500d4372)
 
 ## MySQL
-I created the MySQL server as a Docker container. Every credential is located in `docker-compose-kafka.yml`. I also defined them in the scripts.
+I created the MySQL server as a Docker container. Every env variable is located in `docker-compose-kafka.yml`. I also defined them in the scripts.
 
 By running the following command, we can access to MySQL server:
 
