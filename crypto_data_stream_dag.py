@@ -5,7 +5,7 @@ from datetime import datetime
 from crypto_data_stream import data_stream
 from read_kafka_write_mysql import create_new_tables_in_mysql, insert_data_into_mysql
 
-start_date = datetime(2023, 1, 1, 12, 10)
+start_date = datetime(2018, 12, 21, 12, 12)
 
 default_args = {
     'owner': 'airflow',
