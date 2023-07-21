@@ -1,5 +1,6 @@
 # Information
-![image](https://github.com/dogukannulu/crypto_api_kafka_airflow_streaming/assets/91257958/621bea9f-01a2-4deb-b8b1-778cc6dcbff8)
+![image](https://github.com/dogukannulu/crypto_api_kafka_airflow_streaming/assets/91257958/dbf5d532-434a-4042-a0aa-1eaa48b9609f)
+
 
 
 
