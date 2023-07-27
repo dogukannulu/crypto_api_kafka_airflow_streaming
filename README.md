@@ -1,5 +1,8 @@
 # Information
-![image](https://github.com/dogukannulu/crypto_api_kafka_airflow_streaming/assets/91257958/8cf1c934-967d-43b7-8b37-30d7504cb181)
+![image](https://github.com/dogukannulu/crypto_api_kafka_airflow_streaming/assets/91257958/dbf5d532-434a-4042-a0aa-1eaa48b9609f)
+
+
+
 
 
 This repo illustrates a streaming data pipeline.
